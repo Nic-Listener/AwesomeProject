@@ -11,12 +11,14 @@ const Input: React.FC<InputProps> = ({ isPassword = false, ...props }) => {
   return (
     <View style={styles.inputContainer}>
       <TextInput
+        style={styles.input}
         secureTextEntry={secureText}
         placeholderTextColor="#999"
         {...props}
       />
       {isPassword && (
         <TouchableOpacity
+          style={styles.toggle}
           onPress={() => setSecureText(!secureText)}
         >
           <Text style={styles.toggleText}>{secureText ? '(◉‿◉)' : '(─ ‿ ─)'}</Text>
@@ -31,7 +33,21 @@ const styles = StyleSheet.create({
     width: '80%',
     marginBottom: 10,
   },
-
+  input: {
+    height: 40,
+    borderColor: '#000',
+    borderWidth: 1,
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    backgroundColor: '#fff',
+    color: '#000',
+  },
+  toggle: {
+    position: 'absolute',
+    right: 10,
+    justifyContent: 'center',
+    height: '100%',
+  },
   toggleText: {
     fontSize: 18,
   },
