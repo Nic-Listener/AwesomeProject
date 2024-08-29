@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({ isPassword = false, ...props }) => {
           style={styles.toggle}
           onPress={() => setSecureText(!secureText)}
         >
-          <Text style={styles.toggleText}>{secureText ? '(◉‿◉)' : '(─ ‿ ─)'}</Text>
+          <Text style={styles.toggleText}>{secureText ? '(◉‿◉)' : '( -‿- )'}</Text>
         </TouchableOpacity>
       )}
     </View>
@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
   },
   toggleText: {
     fontSize: 18,
+    color: '#999'
   },
 });
 

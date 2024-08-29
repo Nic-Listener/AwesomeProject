@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import LoginScreen from './android/app/src/screens/Loginscreen';
+import LoginScreen from './android/app/src/screens/LoginScreen';
 
 const App: React.FC = () => {
   return (
