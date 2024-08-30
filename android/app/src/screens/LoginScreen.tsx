@@ -1,27 +1,31 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native';
 import Input from '../components/Imput';
 import Button from '../components/Button';
 import { globalStyles } from '../styles/Styles';
 
+type LoginScreenNavigationProp = NativeStackNavigationProp<any, 'Login'>;
+
 const LoginScreen: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigation = useNavigation<LoginScreenNavigationProp>();
 
   const handleLogin = () => {
     // Lógica de autenticação
     console.log('E-mail:', email);
     console.log('Senha:', password);
+    navigation.navigate('Home');
   };
 
   const handleCreateAccount = () => {
-    // Navegação para a tela de criação de conta
-    console.log('Criar Conta');
+    navigation.navigate('CreateAccount');
   };
 
   const handleForgotPassword = () => {
-    // Navegação para a tela de recuperação de senha
-    console.log('Esqueci minha senha');
+    navigation.navigate('ForgotPassword');
   };
 
   return (
